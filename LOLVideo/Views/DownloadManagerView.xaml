@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="LOLVideo.Views.DownloadManagerView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" Height="480" Width="650">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+          
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,5">
+            <Button Name="NewTask" Content="新建" Style="{DynamicResource MetroCircleButtonStyle}" Height="45" Width="45" />
+            <Button Name="ComboTask" Content="合并" Style="{DynamicResource MetroCircleButtonStyle}" Height="45" Width="45" />
+            <Button Name="CancelTask" Content="取消" Style="{DynamicResource MetroCircleButtonStyle}" Height="45" Width="45" />
+            <Button Name="RemoveTask" Content="删除" Style="{DynamicResource MetroCircleButtonStyle}" Height="45" Width="45" Margin="5,0,0,0" />
+            <Button Name="OpenTaskDir" Content="目录" Style="{DynamicResource MetroCircleButtonStyle}" Height="45" Width="45" Margin="5,0,0,0" />
+         
+        </StackPanel>
+        <ListView Name="listView1" SelectedItem="{Binding SelectedDownloadInfo}" ItemsSource="{Binding Model.DownloadTaskList}" Grid.Row="0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="视频名称" Width="200" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
+                    <GridViewColumn Header="当前位置" Width="90" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding TaskCurrentIndex}"/>
+                                    <TextBlock Text="/"/>
+                                    <TextBlock Text="{Binding TaskCount}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                  
+                    <GridViewColumn Header="进度" Width="160"  >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Controls:MetroProgressBar Value="{Binding Progress}"   Width="150" Height="22"/>
+                                </StackPanel>
+                            
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="下载速度" Width="80" DisplayMemberBinding="{Binding Speed}"></GridViewColumn>
+                    <GridViewColumn Header="状态"  Width="80" DisplayMemberBinding="{Binding State}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

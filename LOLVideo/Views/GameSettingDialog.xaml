@@ -1,0 +1,28 @@
+﻿<Controls:MetroWindow x:Class="LOLVideo.Views.GameSettingDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Height="291" Width="452" 
+        Icon="/LOLVideo;component/logo.png"
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen"
+        ShowMaxRestoreButton="False" Background="#FF2E2E2E" Loaded="MetroWindow_Loaded_1" 
+        >
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="29,74,0,0" TextWrapping="Wrap" Text="国服版本:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="29,119,0,0" TextWrapping="Wrap" Text="BO插件:" VerticalAlignment="Top"/>
+        <Button Name="gbrowser" Content="备份" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" Width="74" Height="24" Click="gbrowser_Click"/>
+        <Button Name="mbrowser" Content="注册" ToolTip="需要管理员模式" HorizontalAlignment="Left" Margin="112,114,0,0" VerticalAlignment="Top" Width="74" Height="24" Click="mbrowser_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,17,0,0" TextWrapping="Wrap" Text="程序版本设置" VerticalAlignment="Top" FontSize="18"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="3" Margin="-1,42,-1,0" VerticalAlignment="Top" Width="449" Background="#FF41CBFF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="29,164,0,0" TextWrapping="Wrap" Text="游戏目录 :" VerticalAlignment="Top"/>
+        <TextBox Name="gpath" HorizontalAlignment="Left" Height="23" Margin="111,160,0,0"  Text="" VerticalAlignment="Top" Width="231"/>
+        <Button Name="gpathbrowser" Content="浏览" HorizontalAlignment="Left" Margin="350,160,0,0" VerticalAlignment="Top" Width="74" Height="24" Click="gpathbrowser_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="203,117,-1,0" TextWrapping="Wrap" Text="提示:观看大神BO插件，需要管理员模式启用" VerticalAlignment="Top" Foreground="#FF41CBFF" Width="244"/>
+        <TextBlock HorizontalAlignment="Left" Margin="203,74,0,0" TextWrapping="Wrap" Text="提示:请在官方升级游戏后进行备份" VerticalAlignment="Top" Foreground="#FF41CBFF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="29,213,0,0" TextWrapping="Wrap" Text="下载目录 :" VerticalAlignment="Top"/>
+        <TextBox x:Name="vpath" HorizontalAlignment="Left" Height="23" Margin="111,209,0,0"  Text="" VerticalAlignment="Top" Width="231"/>
+        <Button x:Name="vpathbrowser" Content="浏览" HorizontalAlignment="Left" Margin="350,209,0,0" VerticalAlignment="Top" Width="74" Height="24" Click="vpathbrowser_Click"/>
+
+    </Grid>
+</Controls:MetroWindow >

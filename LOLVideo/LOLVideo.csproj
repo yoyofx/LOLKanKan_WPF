@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC95020E-F23C-4525-A2C9-C9714801B572}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LOLVideo</RootNamespace>
+    <AssemblyName>LOLVideo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>netfix.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ExtendPropertyLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\ExtendPropertyLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtendPropertyLib.WPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\ExtendPropertyLib.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=0.3.0.17, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.Resources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\MahApps.Metro.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helper\BytesToBitmapConverter.cs" />
+    <Compile Include="Helper\WRegisterTools.cs" />
+    <Compile Include="Helper\ZipHelper.cs" />
+    <Compile Include="Helper\ZipStorer.cs" />
+    <Compile Include="Helper\MD5.cs" />
+    <Compile Include="Helper\NoTopPopup.cs" />
+    <Compile Include="Helper\OperateIniFile.cs" />
+    <Compile Include="Helper\Tools.cs" />
+    <Compile Include="Helper\VirtualizingWrapPanel.cs" />
+    <Compile Include="Helper\WebHelper.cs" />
+    <Compile Include="IMainView.cs" />
+    <Compile Include="Models\DownloadManager.cs" />
+    <Compile Include="Models\DownloadTaskInfo.cs" />
+    <Compile Include="Models\FlvDownloader.cs" />
+    <Compile Include="Models\Hero.cs" />
+    <Compile Include="Models\KeyValueObject.cs" />
+    <Compile Include="Models\LOLSkins\Champion.cs" />
+    <Compile Include="Models\LOLSkins\Champions.cs" />
+    <Compile Include="Models\LOLSkins\Skin.cs" />
+    <Compile Include="Models\QQPlayer.cs" />
+    <Compile Include="Models\ServiceManager.cs" />
+    <Compile Include="Models\VideoPlayerBase.cs" />
+    <Compile Include="UserControls\Cover.cs" />
+    <Compile Include="UserControls\FlowControl.xaml.cs">
+      <DependentUpon>FlowControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Videos\178\178Album.cs" />
+    <Compile Include="Videos\178\LOL178Video.cs" />
+    <Compile Include="Views\DownloaderDialogView.xaml.cs">
+      <DependentUpon>DownloaderDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DownloaderDialogViewModel.cs">
+      <DependentUpon>DownloaderDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DownloadManagerInfo.cs">
+      <DependentUpon>DownloadManagerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DownloadManagerView.xaml.cs">
+      <DependentUpon>DownloadManagerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DownloadManagerViewModel.cs">
+      <DependentUpon>DownloadManagerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GameSettingDialog.xaml.cs">
+      <DependentUpon>GameSettingDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IPlayerView.cs" />
+    <Compile Include="Views\ModifySkinDialogInfo.cs">
+      <DependentUpon>ModifySkinDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModifySkinDialogView.xaml.cs">
+      <DependentUpon>ModifySkinDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModifySkinDialogViewModel.cs">
+      <DependentUpon>ModifySkinDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ObserverView.xaml.cs">
+      <DependentUpon>ObserverView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectHerosSkinDialogInfo.cs">
+      <DependentUpon>SelectHerosSkinDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectHerosSkinDialogView.xaml.cs">
+      <DependentUpon>SelectHerosSkinDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectHerosSkinDialogViewModel.cs">
+      <DependentUpon>SelectHerosSkinDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectVideoPlayerDialogInfo.cs">
+      <DependentUpon>SelectVideoPlayerDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectVideoPlayerDialogView.xaml.cs">
+      <DependentUpon>SelectVideoPlayerDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectVideoPlayerDialogViewModel.cs">
+      <DependentUpon>SelectVideoPlayerDialogView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainInfo.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainViewModel.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Album.cs" />
+    <Compile Include="Models\IVideoPlayer.cs" />
+    <Compile Include="Models\PlayerFactory.cs" />
+    <Compile Include="Models\ShareSetting.cs" />
+    <Compile Include="Models\Video.cs" />
+    <Compile Include="Models\YouKuPlayer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="bin\Debug\Skins\南瓜头蝙蝠.zip" />
+    <None Include="bin\Debug\Skins\反和谐.zip" />
+    <None Include="bin\Debug\Skins\墓天使.zip" />
+    <None Include="bin\Debug\Skins\小兵爆糖果.zip" />
+    <None Include="bin\Debug\Skins\小兵爆金币.zip" />
+    <None Include="bin\Debug\Skins\幽灵.zip" />
+    <None Include="bin\Debug\Skins\树精.zip" />
+    <None Include="bin\Debug\Skins\红蓝小兵.zip" />
+    <None Include="bin\Debug\Skins\蜘蛛寡妇.zip" />
+    <None Include="bin\Debug\Skins\血条.zip" />
+    <None Include="netfix.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.png" />
+    <Resource Include="icon.ico" />
+    <Resource Include="0.png" />
+    <Content Include="Lib\ExtendPropertyLib.dll" />
+    <Content Include="Lib\ExtendPropertyLib.WPF.dll" />
+    <Content Include="Lib\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Lib\MahApps.Metro.dll" />
+    <Content Include="Lib\MahApps.Metro.Resources.dll" />
+    <Content Include="Lib\Microsoft.Expression.Interactions.dll" />
+    <Content Include="Lib\System.Windows.Interactivity.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FlowControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DownloaderDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DownloadManagerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GameSettingDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ModifySkinDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ObserverView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectHerosSkinDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectVideoPlayerDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

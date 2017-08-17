@@ -1,0 +1,173 @@
+﻿<UserControl x:Class="LOLVideo.Views.ModifySkinDialogView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Ex="clr-namespace:ExtendPropertyLib.XAML.Converters;assembly=ExtendPropertyLib.WPF"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        mc:Ignorable="d"
+       
+        >
+    <UserControl.Resources>
+        <Ex:BoolToVisibilityConverter x:Key="btv"/>
+    </UserControl.Resources>
+    <Grid Width="1260" Height="700" >
+        <Grid  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="38*"/>
+                </Grid.RowDefinitions>
+                <!--<StackPanel Grid.Row="0" Orientation="Horizontal">
+                   
+                </StackPanel>-->
+                <StackPanel Grid.Row="1" Orientation="Horizontal" >
+                    <TextBlock Text="战场职责：" Margin="15,0,0,0" VerticalAlignment="Center" FontSize="15" FontFamily="Microsoft YaHei"/>
+                    <CheckBox Name="c1" Content="全部" VerticalAlignment="Center" Tag="all" IsChecked="True"   Checked="CheckBox_Checked_1" Unchecked="c1_Unchecked_1" Margin="7,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                    <CheckBox Name="c2" Content="近战" VerticalAlignment="Center" Tag="melee" Checked="CheckBox_Checked_1" Unchecked="c1_Unchecked_1" Margin="9,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                    <CheckBox Name="c3" Content="法师" VerticalAlignment="Center" Tag="mage" Checked="CheckBox_Checked_1" Unchecked="c1_Unchecked_1" Margin="9,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                    <CheckBox Name="c4" Content="远程" VerticalAlignment="Center" Tag="ranged" Checked="CheckBox_Checked_1" Unchecked="c1_Unchecked_1" Margin="9,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                    <CheckBox Name="c5" Content="肉盾" VerticalAlignment="Center" Tag="tank" Checked="CheckBox_Checked_1" Unchecked="c1_Unchecked_1" Margin="9,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                    <CheckBox Name="c6" Content="辅助" VerticalAlignment="Center" Tag="support" Checked="CheckBox_Checked_1" Unchecked="c1_Unchecked_1" Margin="9,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                    <CheckBox Name="c7" Content="刺客" VerticalAlignment="Center" Tag="assassin" Checked="CheckBox_Checked_1" Unchecked="c1_Unchecked_1" Margin="9,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                    <CheckBox Name="c8" Content="战士" VerticalAlignment="Center" Tag="fighter" Checked="CheckBox_Checked_1" Unchecked="c1_Unchecked_1" Margin="9,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                    <TextBlock Text="搜索英雄：" Margin="15,0,0,0" VerticalAlignment="Center" FontSize="14"/>
+                    <TextBox Name="text1"  Width="180" Height="23"  Margin="5,0,0,0" Text="{Binding SearchName,Mode=TwoWay}" TextChanged="TextBox_TextChanged_1"/>
+
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2">
+                <StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,5,0,0" >
+                        <TextBlock Text="皮肤：" Margin="15,0,0,0" VerticalAlignment="Center" FontSize="14"/>
+                        <CheckBox  Content="反和谐"     IsChecked="{Binding Model.OtherSkins[0].Value}" VerticalAlignment="Center" Margin="7,3,0,0"/>
+                        <!--<CheckBox  Content="血条"       IsChecked="{Binding Model.OtherSkins[1].Value}" VerticalAlignment="Center"  Margin="9,3,0,0"/>-->
+                        <CheckBox  Content="红蓝小兵"   IsChecked="{Binding Model.OtherSkins[2].Value}" VerticalAlignment="Center"  Margin="9,3,0,0"/>
+                        <CheckBox  Content="小兵爆糖果" IsChecked="{Binding Model.OtherSkins[3].Value}" VerticalAlignment="Center"   Margin="9,3,0,0"/>
+                        <CheckBox  Content="小兵爆金币" IsChecked="{Binding Model.OtherSkins[4].Value}" VerticalAlignment="Center"   Margin="9,3,0,0"/>
+                        <CheckBox  Content="血液增强补丁" IsChecked="{Binding Model.OtherSkins[5].Value}" VerticalAlignment="Center"   Margin="9,3,0,0"/>
+                        <CheckBox  Content="施法伤害美化" IsChecked="{Binding Model.OtherSkins[6].Value}" ToolTip="修改后不目前不能还原" VerticalAlignment="Center"   Margin="9,3,0,0"/>
+
+                        
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,7,0,0" TextElement.FontSize="15" >
+                        <TextBlock Text="眼位：" Margin="15,0,0,0" VerticalAlignment="Center" FontSize="14"/>
+                        <RadioButton  Content="无效果"      IsChecked="{Binding Model.EyeSkins[0].Value}"   VerticalAlignment="Center" Margin="7,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                        <RadioButton  Content="墓天使"      IsChecked="{Binding Model.EyeSkins[1].Value}"   VerticalAlignment="Center" Margin="7,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                        <RadioButton  Content="南瓜头蝙蝠"  IsChecked="{Binding Model.EyeSkins[2].Value}"    VerticalAlignment="Center" Margin="9,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                        <RadioButton  Content="幽灵"        IsChecked="{Binding Model.EyeSkins[3].Value}"      VerticalAlignment="Center"  Margin="9,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                        <RadioButton  Content="蜘蛛寡妇"    IsChecked="{Binding Model.EyeSkins[4].Value}"       VerticalAlignment="Center"  Margin="9,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                        <RadioButton  Content="树精"        IsChecked="{Binding Model.EyeSkins[5].Value}"     VerticalAlignment="Center"  Margin="9,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                        <RadioButton  Content="姜饼"        IsChecked="{Binding Model.EyeSkins[6].Value}"     VerticalAlignment="Center"  Margin="9,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+                        <RadioButton  Content="雪人"        IsChecked="{Binding Model.EyeSkins[7].Value}"     VerticalAlignment="Center"  Margin="9,3,0,0"  FontSize="15" FontFamily="Microsoft YaHei"/>
+
+                    </StackPanel>
+
+                </StackPanel>
+                <Button Name="OnClear" HorizontalAlignment="Right" Margin="0,0,177,0" VerticalAlignment="Center"  Content="清空" Width="125" Height="28"  BorderBrush="#FF727272" FontSize="18" FontWeight="Bold" Foreground="White" FontFamily="Microsoft YaHei" TextOptions.TextRenderingMode="ClearType"  Style="{DynamicResource ButtonStyle1}"  >
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="2" BlurRadius="4" Direction="308" Opacity="0.965"/>
+                    </Button.Effect>
+                    <Button.ToolTip>
+                        <StackPanel>
+                            <TextBlock Foreground="AliceBlue" Text="将所有生效皮肤清空，为了更好的进行游戏请每局结束后清空一下所有皮肤效果！"/>
+                        </StackPanel>
+                    </Button.ToolTip>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF2B3F40" Offset="0"/>
+                            <GradientStop Color="#FF4E7657" Offset="1"/>
+                            <GradientStop Color="#FF2A3C3C" Offset="0.46"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button Name="OnApply" HorizontalAlignment="Right" Margin="0,0,36,0" VerticalAlignment="Center"  Content="应用" Width="125" Height="28" BorderBrush="#FF727272" FontSize="18" FontWeight="Bold" Foreground="White" FontFamily="Microsoft YaHei" TextOptions.TextRenderingMode="ClearType"  Style="{DynamicResource ButtonStyle1}" >
+                    <Button.ToolTip>
+                        <StackPanel>
+                            <TextBlock Foreground="AliceBlue" Text="将所有选择好的皮肤生效，选择完皮肤后请务必应用此选项;注意选择皮肤效果过多可能会导致生效时间很长！"/>
+                        </StackPanel>
+                    </Button.ToolTip>
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="2" BlurRadius="4" Direction="308" Opacity="0.965"/>
+                    </Button.Effect>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF402B39" Offset="0"/>
+                            <GradientStop Color="#FF764E55" Offset="1"/>
+                            <GradientStop Color="#FF3C2A35" Offset="0.46"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </Grid>
+            <ListBox x:Name="herolist" Margin="7"  ItemsSource="{Binding HeroCollection,IsAsync=True}" 
+                             ScrollViewer.CanContentScroll="False" 
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                             ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.Row="1" Background="#FF212121" >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseUp">
+                        <i:InvokeCommandAction Command="{Binding OnHeroSelectedCommand}" CommandParameter="{Binding SelectedItem,ElementName=herolist}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+
+                        <Setter Property="Margin" Value="8" />
+                        <Setter Property="Padding" Value="3" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Height="90" Width="77">
+                            <StackPanel.ToolTip>
+                                <ToolTip Background="#FF1D1D1D" HasDropShadow="True" >
+                                    <ToolTip.Effect>
+                                        <DropShadowEffect ShadowDepth="6" BlurRadius="6" Direction="355"/>
+                                    </ToolTip.Effect>
+
+                                    <Border  BorderThickness="1" CornerRadius="3">
+                                        <StackPanel  >
+                                            <TextBlock Text="{Binding Name}" Foreground="#FF3F3F46" FontSize="14"/>
+                                            <TextBlock Text="{Binding EngishName}" Foreground="#FF3F3F46" FontSize="12" />
+                                        </StackPanel>
+                                    </Border>
+                                </ToolTip>
+
+
+
+                            </StackPanel.ToolTip>
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3" Background="Black">
+
+                                <Image x:Name="img" Source="{Binding Image}" Height="65px" Width="65px"/>
+                            </Border>
+
+                            <TextBlock Text="{Binding Title}" Foreground="WhiteSmoke" HorizontalAlignment="Center"   TextWrapping="Wrap" Margin="0,4,0,0" FontSize="13"  FontFamily="Microsoft YaHei"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </Grid>
+        <Grid Panel.ZIndex="999" Background="#FF0F0F0F" Opacity=".75" Visibility="{Binding IsBusy,Converter={StaticResource btv}}">
+            <Grid VerticalAlignment="Center" Height="300" Background="#FF0C5CAC">
+                <StackPanel VerticalAlignment="Center" Height="200" >
+                    <Controls:ProgressRing IsActive="True" Height="100" Width="100" Foreground="White" Margin="0,20,0,0"/>
+                    <TextBlock Text=""/>
+                    <TextBlock Margin="16" Text="正在处理数据，请耐心等待，请不要关闭此窗口。" HorizontalAlignment="Center"  FontWeight="Bold" FontSize="22" Foreground="#FFFFF3F3" FontFamily="Microsoft YaHei"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
